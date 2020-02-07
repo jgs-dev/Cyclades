@@ -1,14 +1,40 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Classic Cyclades
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <form (ngSubmit)="abrirModal()">
+    <ion-list>
+      <ion-item>
+        <ion-label>#Players</ion-label>
+        <ion-input class="ion-text-right" type="tel"></ion-input>
+      </ion-item>
+
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label>Mode:</ion-label>
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>Classic</ion-label>
+          <ion-radio slot="start" value="classic" checked></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Titans</ion-label>
+          <ion-radio slot="start" value="titans"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      
+    </ion-list>
+
+    <ion-button shape="round" expand="block" type="submit">Shuffle</ion-button>
+
+  </form>
+
+
 </ion-content>

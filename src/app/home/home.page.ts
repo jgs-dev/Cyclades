@@ -9,4 +9,8 @@ export class HomePage {
 
   constructor() {}
 
+  abrirModal(){
+    console.log("Abre modal");
+  }
+
 }
