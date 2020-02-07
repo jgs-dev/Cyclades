@@ -1,0 +1,7 @@
+{
+  "name": "Cyclades",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
