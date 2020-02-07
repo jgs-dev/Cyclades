@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "Cyclades",
+  "appName": "Cyclades Shuffle",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
