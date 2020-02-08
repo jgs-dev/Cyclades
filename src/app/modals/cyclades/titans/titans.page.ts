@@ -14,13 +14,14 @@ export class TitansPage implements OnInit {
   @Input() mode: string
   @Input() players: number;
 
+  gods: string[];
   constructor(private modalCtrl: ModalController, private logic: TitansService, private turns: TurnsService) { }
 
   ngOnInit() {
   }
 
   shuffle() {
-    this.logic.shuffleController(this.players);
+    this.gods = this.logic.shuffleController(this.players);
   }
 
   closeModal() {

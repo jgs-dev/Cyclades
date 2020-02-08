@@ -9,7 +9,7 @@ export class TitansService {
   gods: string[];
 
   constructor(private turns: TurnsService) {
-    this.gods = ["Poseidon", " Ares", "Zeus", "Athena", "Kronos"];
+    this.gods = ["../../../assets/img/poseidon.png", "../../../assets/img/ares.png", "../../../assets/img/zeus.png", "../../../assets/img/athena.png", "../../../assets/img/kronos.png"];
     this.gods = this.shuffle(this.gods);
   }
 
@@ -33,7 +33,7 @@ export class TitansService {
       case 6:
         this.gods = this.shuffle(this.gods);
         this.turns.addTurn();
-        break;
+        return this.gods;
       case 5:
         {
           let auxGods = this.gods.slice(0, 4);
@@ -44,7 +44,9 @@ export class TitansService {
           this.gods[3] = auxGods[2];
           this.gods[4] = auxGods[3];
           this.turns.addTurn();
-          break;
+          auxGods = [...this.gods];
+          auxGods[4] = "../../../assets/img/back.png";
+          return auxGods;
         }
       case 4:
         {
@@ -57,12 +59,15 @@ export class TitansService {
           this.gods[4] = auxGods[2];
 
           this.turns.addTurn();
-          break;
+          auxGods = [...this.gods];
+          auxGods[3] = "../../../assets/img/back.png";
+          auxGods[4] = "../../../assets/img/back.png";
+          return auxGods;
         }
       case 3:
         // 3 Players:
         // The last 3 Gods are placed face-down. Two of them will be randomly placed in the first two spaces during the next cycle.
-        
+
         let auxGodsFirstHalf = this.gods.slice(0, 2);
         let auxGodsSecondHalf = this.gods.slice(2);
 
@@ -77,9 +82,13 @@ export class TitansService {
         this.gods[3] = auxGodsFirstHalf[1];
         this.gods[4] = auxGodsFirstHalf[2];
 
-
+        let auxGods = [...this.gods];
+        auxGods[2] = "../../../assets/img/back.png";
+        auxGods[3] = "../../../assets/img/back.png";
+        auxGods[4] = "../../../assets/img/back.png";
         this.turns.addTurn();
-        break;
+
+        return auxGods;
     }
   }
 

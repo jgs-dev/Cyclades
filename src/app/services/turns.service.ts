@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TurnsService {
 
-  turn: number = 1;
+  turn: number = 0;
   constructor() { }
 
   addTurn(){
@@ -13,7 +13,7 @@ export class TurnsService {
   }
 
   reset(){
-    this.turn = 1;
+    this.turn = 0;
   }
 
   getTurn(){

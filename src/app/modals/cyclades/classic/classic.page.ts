@@ -13,14 +13,17 @@ export class ClassicPage implements OnInit {
   @Input() mode: string
   @Input() players: number;
 
-  constructor(private modalCtrl: ModalController, private logic: ClassicService,private turns: TurnsService) { }
+  gods: string[];
+
+  constructor(private modalCtrl: ModalController, private logic: ClassicService,private turns: TurnsService) { 
+    
+  }
 
   ngOnInit() {
   }
 
   shuffle(){
-    console.log(this.players);
-    this.logic.shuffleController(this.players);
+    this.gods = this.logic.shuffleController(this.players);
   }
 
   closeModal() {
