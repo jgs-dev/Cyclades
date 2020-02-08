@@ -2,24 +2,24 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ClassicService } from 'src/app/services/cyclades/classic.service';
 import { TurnsService } from 'src/app/services/turns.service';
+import { TitansService } from 'src/app/services/cyclades/titans.service';
 
 @Component({
-  selector: 'app-classic',
-  templateUrl: './classic.page.html',
-  styleUrls: ['./classic.page.scss'],
+  selector: 'app-titans',
+  templateUrl: './titans.page.html',
+  styleUrls: ['./titans.page.scss'],
 })
-export class ClassicPage implements OnInit {
+export class TitansPage implements OnInit {
 
   @Input() mode: string
   @Input() players: number;
 
-  constructor(private modalCtrl: ModalController, private logic: ClassicService,private turns: TurnsService) { }
+  constructor(private modalCtrl: ModalController, private logic: TitansService, private turns: TurnsService) { }
 
   ngOnInit() {
   }
 
-  shuffle(){
-    console.log(this.players);
+  shuffle() {
     this.logic.shuffleController(this.players);
   }
 
@@ -27,8 +27,7 @@ export class ClassicPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  ionViewDidLeave(){
+  ionViewDidLeave() {
     this.turns.reset();
   }
-
 }

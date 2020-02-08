@@ -1,40 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Classic Cyclades
-    </ion-title>
+    <ion-title>home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="abrirModal()">
+
+  <form [formGroup]="homeForm" (ngSubmit)="openCycladesModal()">
     <ion-list>
       <ion-item>
-        <ion-label>#Players</ion-label>
-        <ion-input class="ion-text-right" type="tel"></ion-input>
+        <ion-label>#Players:</ion-label>
+        <ion-input formControlName="players" class="ion-text-right"></ion-input>
       </ion-item>
-
-      <ion-radio-group>
-        <ion-list-header>
+      <ion-radio-group formControlName="mode">
+        <ion-item>
           <ion-label>Mode:</ion-label>
-        </ion-list-header>
-    
+        </ion-item>
+
         <ion-item>
           <ion-label>Classic</ion-label>
           <ion-radio slot="start" value="classic" checked></ion-radio>
         </ion-item>
-    
         <ion-item>
           <ion-label>Titans</ion-label>
           <ion-radio slot="start" value="titans"></ion-radio>
         </ion-item>
       </ion-radio-group>
-      
+
+      <ion-button type="submit" shape="round" expand="full">Shuffle</ion-button>
+
     </ion-list>
-
-    <ion-button shape="round" expand="block" type="submit">Shuffle</ion-button>
-
   </form>
-
 
 </ion-content>
