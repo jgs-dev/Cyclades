@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Directive, ElementRef, ContentChildren, QueryList } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ClassicService } from 'src/app/services/cyclades/classic.service';
 import { TurnsService } from 'src/app/services/turns.service';
+
+
 
 @Component({
   selector: 'app-classic',
@@ -15,14 +17,14 @@ export class ClassicPage implements OnInit {
 
   gods: string[];
 
-  constructor(private modalCtrl: ModalController, private logic: ClassicService,private turns: TurnsService) { 
-    
+  constructor(private modalCtrl: ModalController, private logic: ClassicService, public turns: TurnsService) {
+
   }
 
   ngOnInit() {
   }
 
-  shuffle(){
+  shuffle() {
     this.gods = this.logic.shuffleController(this.players);
   }
 
@@ -30,7 +32,7 @@ export class ClassicPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  ionViewDidLeave(){
+  ionViewDidLeave() {
     this.turns.reset();
   }
 

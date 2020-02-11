@@ -8,6 +8,7 @@ import { ClassicPageRoutingModule } from './classic-routing.module';
 
 import { ClassicPage } from './classic.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +16,8 @@ import { ClassicPage } from './classic.page';
     IonicModule,
     ClassicPageRoutingModule
   ],
-  declarations: [ClassicPage]
+  declarations: [
+    ClassicPage
+  ]
 })
-export class ClassicPageModule {}
+export class ClassicPageModule { }
