@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { ClassicPage } from './classic.page';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -9,4 +7,4 @@ import { ClassicPage } from './classic.page';
   imports: [],
   exports: [RouterModule],
 })
-export class ClassicPageRoutingModule {}
+export class ClassicPageRoutingModule { }

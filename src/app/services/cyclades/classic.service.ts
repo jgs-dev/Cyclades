@@ -7,7 +7,7 @@ import { TurnsService } from '../turns.service';
 export class ClassicService {
 
   gods: string[];
-  
+
 
   constructor(private turns: TurnsService) {
     this.gods = ["../../../assets/img/poseidon.png", "../../../assets/img/ares.png", "../../../assets/img/zeus.png", "../../../assets/img/athena.png"];
@@ -15,7 +15,7 @@ export class ClassicService {
   }
 
 
-  shuffleController(players: number):string[] {
+  shuffleController(players: number): string[] {
 
     // When playing with 4 players, the last of the 4 Gods will be placed face-down. It will not be available for this cycle.
     //  During the following cycle, you will place this God in the first space, face-up, and shuffle the other 3.
@@ -63,8 +63,7 @@ export class ClassicService {
           this.turns.addTurn();
           return auxGods;
         }
-        
-        break;
+
     }
   }
 
