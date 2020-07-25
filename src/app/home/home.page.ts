@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { ModalController, AnimationController, IonImg, IonFab } from '@ionic/angular';
 import { ClassicPage } from '../modals/cyclades/classic/classic.page';
 import { TitansPage } from '../modals/cyclades/titans/titans.page';
 import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,12 @@ import { FormBuilder } from '@angular/forms';
 })
 export class HomePage implements OnInit {
 
-  constructor(private modalCtrl: ModalController, private formBuilder: FormBuilder) { }
+  @ViewChild("image", { read: Element, static: false }) test: Element;
+
+  constructor(private modalCtrl: ModalController, private formBuilder: FormBuilder, private animateCtrl: AnimationController) {
+    console.log(this.test)
+    
+  }
 
   homeForm = this.formBuilder.group({
     players: [""],
@@ -19,6 +25,18 @@ export class HomePage implements OnInit {
   });
 
   ngOnInit() {
+    console.log(this.test, "onInit")
+  }
+
+  testingMethod() {
+    
+    this.animateCtrl.create()
+      .addElement(this.test)
+      .duration(1500)
+      .iterations(Infinity)
+      .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
+      .fromTo('opacity', '1', '0.2')
+
   }
 
   async openCycladesModal() {

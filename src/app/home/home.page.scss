@@ -1,3 +1,10 @@
 ion-content {
     --background: url("./../../assets/img/cyclades_background.png") no-repeat 10% 10%;
 }
+
+.square {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 255, 0.5);
+    margin: 10px;
+  }
